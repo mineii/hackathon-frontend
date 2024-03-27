@@ -3,8 +3,8 @@ import React from "react";
 function UrlInput() {
   return (
     <div>
-      <input>input</input>
-      <button>button</button>
+      <input type="text" placeholder="URL을 입력하세요." />
+      <button className="input-button">실행</button>
     </div>
   );
 }
