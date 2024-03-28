@@ -1,7 +1,7 @@
 import React from "react";
 import UrlItem from "./UrlItem";
 
-function UrlList(url, setUrl) {
+function UrlList({ urls, setUrls }) {
   return (
     <div>
       <UrlItem />
