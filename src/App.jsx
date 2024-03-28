@@ -2,14 +2,16 @@ import "./App.css";
 import UrlInput from "./UrlInput";
 import UrlList from "./UrlList";
 
-// import { useState } from "react";
+import { useState } from "react";
 
 function App() {
+  const [url, setUrl] = useState([]);
+
   return (
     <div>
       <h1>Short URL</h1>
-      <UrlInput />
-      <UrlList />
+      <UrlInput url={url} setUrl={setUrl} />
+      <UrlList url={url} setUrl={setUrl} />
     </div>
   );
 }
