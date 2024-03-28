@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { createShortUrl } from "./mocks/api";
 
-function UrlInput({ urls, setUrls }) {
+function UrlInput() {
+  const [urls, setUrls] = useState([]);
   const [input, setInput] = useState("");
 
   const handleInputChange = (e) => {
@@ -11,7 +12,7 @@ function UrlInput({ urls, setUrls }) {
   const handleSubmitClick = async () => {
     const res = await createShortUrl(input);
     setUrls([...urls, res]);
-    console.log(urls);
+    // console.log(urls);
   };
 
   // 확인
