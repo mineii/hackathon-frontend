@@ -19,9 +19,9 @@ function UrlList() {
       {urls.length === 0 && <p>No Lists</p>}
       {urls.length !== 0 && (
         <>
-          <b>URL Lists</b>
+          <p>URL Lists</p>
           {urls.map((url) => (
-            <UrlItem key={url.id} url={url} />
+            <UrlItem key={url.id} url={url} urls={urls} setUrls={setUrls} />
           ))}
         </>
       )}

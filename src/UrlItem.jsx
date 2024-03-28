@@ -1,7 +1,12 @@
 import React from "react";
 import { deleteUrl } from "./mocks/api";
 
-function URLitem({ url }) {
+function URLitem({ url, urls, setUrls }) {
+  const handleDelete = async (id) => {
+    await deleteUrl(id);
+    const filteredUrls = urls.filter((url) => url.id !== id);
+    setUrls(filteredUrls);
+  };
   return (
     <div>
       <b>Origin URL</b>
@@ -10,7 +15,7 @@ function URLitem({ url }) {
         <b>Short URL</b>
         <a href="url.shortUrl">{url.shortUrl} </a>
       </div>
-      <button>X</button>
+      <button onClick={() => handleDelete(url.id)}>X</button>
     </div>
   );
 }
